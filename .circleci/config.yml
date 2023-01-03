@@ -21,6 +21,10 @@ jobs:
     steps:
       - checkout
       - run: npm audit
+      - run:
+            name: analyzing 
+            command: npm audit fix
+            when: on_fail
 
 workflows:
   my_workflow:
